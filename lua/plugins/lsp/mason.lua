@@ -34,6 +34,7 @@ return {
 				"prettier", -- prettier formatter
 				"ruff", -- ruff formater (différent du LSP)
 				"stylua", -- lua formater
+				"tflint",
 				"eslint_d", --js, ts, svelte
 			},
 		})
