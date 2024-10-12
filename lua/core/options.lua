@@ -6,8 +6,8 @@ opt.number = true -- affiche le numéro absolu de la ligne active lorsque que re
 
 -- tabs & indentation
 opt.tabstop = 2 -- 2 espaces pour les tabulations
-opt.shiftwidth = 2 -- 2 espaces pour la taille des indentations
-opt.expandtab = true -- change les tabulations en espaces (don't feed the troll please ;) )
+opt.shiftwidth = 2 -- 2 colonnes pour la taille des indentations
+opt.expandtab = false -- on ne change pas les tabulations en espaces (don't feed the troll please ;) )
 opt.autoindent = true -- on garde l'indentation actuelle à la prochaine ligne
 
 -- recherche
@@ -44,4 +44,3 @@ opt.iskeyword:append("-") -- on traite les mots avec des - comme un seul mot
 -- affichage des caractères spéciaux
 opt.list = true
 opt.listchars:append({ nbsp = "␣", trail = "•", precedes = "«", extends = "»", tab = "> " })
-
