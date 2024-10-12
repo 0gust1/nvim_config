@@ -55,7 +55,7 @@ return {
 				"rust_analyzer",
 				"sqlls",
 				"svelte",
-				"tsserver",
+				"ts_ls",
 				"yamlls",
 			},
 			handlers = {
