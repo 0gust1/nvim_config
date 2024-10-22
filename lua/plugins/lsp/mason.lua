@@ -52,7 +52,7 @@ return {
 				"html",
 				"lua_ls",
 				"pylsp",
-				"ruff_lsp",
+				"ruff",
 				"rust_analyzer",
 				"sqlls",
 				"svelte",
@@ -98,7 +98,7 @@ return {
 								plugins = {
 									pyflakes = { enabled = false },
 									pycodestyle = {
-										enabled = true,
+										enabled = false,
 										ignore = { "E501" },
 									},
 								},
@@ -107,9 +107,9 @@ return {
 					})
 				end,
 
-				-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff_lsp
-				ruff_lsp = function()
-					lspconfig.ruff_lsp.setup({
+				-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff
+				ruff = function()
+					lspconfig.ruff.setup({
 						init_options = {
 							settings = {
 								-- Arguments par défaut de la ligne de commande ruff

@@ -15,7 +15,7 @@ return {
 				liquid = { "prettier" },
 				lua = { "stylua" },
 				markdown = { "prettier" },
-				python = { "ruff_fix", "ruff_format" },
+				python = { "ruff", "ruff_organize_imports", "ruff_format" },
 				rust = { "rustfmt" },
 				svelte = { "prettier" },
 				javascript = { "prettier" },
