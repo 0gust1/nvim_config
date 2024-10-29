@@ -51,7 +51,7 @@ return {
 				"graphql",
 				"html",
 				"lua_ls",
-				"pylsp",
+				"pyright",
 				"ruff",
 				"rust_analyzer",
 				"sqlls",
@@ -84,23 +84,6 @@ return {
 								diagnostics = {
 									-- Force le LSP à reconnaître la variable globale `vim`
 									globals = { "vim" },
-								},
-							},
-						},
-					})
-				end,
-
-				-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
-				pylsp = function()
-					lspconfig.pylsp.setup({
-						settings = {
-							pylsp = {
-								plugins = {
-									pyflakes = { enabled = false },
-									pycodestyle = {
-										enabled = false,
-										ignore = { "E501" },
-									},
 								},
 							},
 						},
