@@ -7,6 +7,7 @@ opt.number = true -- affiche le numéro absolu de la ligne active lorsque que re
 -- tabs & indentation
 opt.tabstop = 2 -- 2 espaces pour les tabulations
 opt.shiftwidth = 2 -- 2 colonnes pour la taille des indentations
+opt.softtabstop = 2 -- taille insérée lorsque appui sur <Tab>
 opt.expandtab = false -- on ne change pas les tabulations en espaces (don't feed the troll please ;) )
 opt.autoindent = true -- on garde l'indentation actuelle à la prochaine ligne
 
