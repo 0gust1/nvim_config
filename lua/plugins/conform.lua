@@ -15,7 +15,7 @@ return {
 				liquid = { "prettier" },
 				lua = { "stylua" },
 				markdown = { "prettier" },
-				python = { "ruff", "ruff_organize_imports", "ruff_format" },
+				python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
 				rust = { "rustfmt" },
 				svelte = { "prettier" },
 				javascript = { "prettier" },
@@ -25,7 +25,7 @@ return {
 				yaml = { "prettier" },
 			},
 			format_on_save = {
-				lsp_fallback = true,
+				lsp_fallback = true, -- careful: using lsps as a fallback may override the settings of a defined formatrer (had the problem with tabs - spaces with python)
 				async = false,
 				timeout_ms = 1000,
 			},
