@@ -1,5 +1,7 @@
 local opt = vim.opt -- raccourci pour un peu plus de concision
 
+opt.title = true -- changer le titre de la fenetre de terminal
+
 -- numéros de ligne
 opt.relativenumber = true -- affichage des numéros de ligne relatives à la position actuelle du curseur
 opt.number = true -- affiche le numéro absolu de la ligne active lorsque que relativenumber est activé
@@ -7,7 +9,7 @@ opt.number = true -- affiche le numéro absolu de la ligne active lorsque que re
 -- tabs & indentation
 opt.tabstop = 2 -- 2 espaces pour les tabulations
 opt.shiftwidth = 2 -- 2 colonnes pour la taille des indentations
-opt.softtabstop = 2 -- taille insérée lorsque appui sur <Tab>
+-- opt.softtabstop = 2 -- taille insérée lorsque appui sur <Tab>
 opt.expandtab = false -- on ne change pas les tabulations en espaces (don't feed the troll please ;) )
 opt.autoindent = true -- on garde l'indentation actuelle à la prochaine ligne
 
