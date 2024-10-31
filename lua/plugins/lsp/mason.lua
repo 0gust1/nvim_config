@@ -56,6 +56,7 @@ return {
 				"rust_analyzer",
 				"sqlls",
 				"svelte",
+				"terraformls",
 				"ts_ls",
 				"yamlls",
 			},

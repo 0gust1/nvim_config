@@ -20,6 +20,7 @@ return {
 				svelte = { "prettier" },
 				javascript = { "prettier" },
 				javascriptreact = { "prettier" },
+				terraform = { "terraform_fmt" },
 				typescript = { "prettier" },
 				typescriptreact = { "prettier" },
 				yaml = { "prettier" },

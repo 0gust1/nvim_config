@@ -28,6 +28,7 @@ return {
 				"python",
 				"rst",
 				"rust",
+				"terraform",
 				"typescript",
 				"vim",
 				"yaml",
