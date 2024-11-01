@@ -28,6 +28,7 @@ return {
 				"python",
 				"rst",
 				"rust",
+				"svelte",
 				"terraform",
 				"typescript",
 				"vim",
