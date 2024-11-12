@@ -3,7 +3,7 @@ return {
 	event = { "InsertEnter", "CmdlineEnter" },
 	dependencies = {
 		"hrsh7th/cmp-buffer", -- source pour compléter le texte déjà présent dans le buffer
-		"hrsh7th/cmp-path", -- source pour compléter les chemins des fichiers
+		"hrsh7th/cmp-path",  -- source pour compléter les chemins des fichiers
 		"hrsh7th/cmp-cmdline", -- source pour les completions de la cmdline de vim
 		{
 			"L3MON4D3/LuaSnip",
@@ -12,10 +12,10 @@ return {
 			-- install jsregexp (optional!).
 			build = "make install_jsregexp",
 		},
-		"saadparwaiz1/cmp_luasnip", -- ajoute LuaSnip à l'autocompletion
+		"saadparwaiz1/cmp_luasnip",   -- ajoute LuaSnip à l'autocompletion
 		"rafamadriz/friendly-snippets", -- collection de snippets pratiques
-		"hrsh7th/cmp-emoji", -- complétion d'émojis à la saisie de :
-		"onsails/lspkind.nvim", -- vs-code pictogrammes
+		"hrsh7th/cmp-emoji",          -- complétion d'émojis à la saisie de :
+		"onsails/lspkind.nvim",       -- vs-code pictogrammes
 	},
 	config = function()
 		local cmp = require("cmp")
@@ -37,13 +37,45 @@ return {
 				end,
 			},
 			mapping = {
-				["<C-k>"] = cmp.mapping.select_prev_item(),
-				["<C-j>"] = cmp.mapping.select_next_item(),
+				-- ["<C-k>"] = cmp.mapping.select_prev_item(),
+				--["<C-j>"] = cmp.mapping.select_next_item(),
+
+				["<Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item()
+					elseif luasnip.locally_jumpable(1) then
+						luasnip.jump(1)
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
+				["<S-Tab>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_prev_item()
+					elseif luasnip.locally_jumpable(-1) then
+						luasnip.jump(-1)
+					else
+						fallback()
+					end
+				end, { "i", "s" }),
 				["<C-b>"] = cmp.mapping.scroll_docs(-1),
 				["<C-f>"] = cmp.mapping.scroll_docs(1),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
-				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accepte la sélection courante. Mettre à `false` pour ne confirmer que les items explicitement sélectionnés
+				['<CR>'] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						if luasnip.expandable() then
+							luasnip.expand()
+						else
+							cmp.confirm({
+								select = true,
+							})
+						end
+					else
+						fallback()
+					end
+				end),
+				--	["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accepte la sélection courante. Mettre à `false` pour ne confirmer que les items explicitement sélectionnés
 			},
 
 			-- sources pour l'autocompletion
