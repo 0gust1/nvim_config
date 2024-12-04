@@ -4,6 +4,16 @@ vim.g.mapleader = " "
 -- Raccourci pour la fonction set
 local keymap = vim.keymap.set
 
+-- neovide-specific , set copy/paste commands
+if vim.g.neovide then
+	keymap('n', '<D-s>', ':w<CR>')     -- Save
+	keymap('v', '<D-c>', '"+y')        -- Copy
+	keymap('n', '<D-v>', '"+P')        -- Paste normal mode
+	keymap('v', '<D-v>', '"+P')        -- Paste visual mode
+	keymap('c', '<D-v>', '<C-R>+')     -- Paste command mode
+	keymap('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
+end
+
 -- on utilise ;; pour sortir du monde insertion
 keymap("i", ";;", "<ESC>", { desc = "Sortir du mode insertion avec ;;" })
 
