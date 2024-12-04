@@ -13,7 +13,17 @@ return {
 
 		telescope.setup({
 			defaults = {
-
+				winblend = 10,
+				vimgrep_arguments = {
+					"rg",
+					"--color=never",
+					"--no-heading",
+					"--with-filename",
+					"--line-number",
+					"--column",
+					"--smart-case",
+					"--hidden" -- make hidden files/directories searchable
+				},
 				-- Parce que c'est joli
 				prompt_prefix = " ",
 				selection_caret = " ",

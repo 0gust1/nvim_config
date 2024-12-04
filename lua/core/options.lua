@@ -1,5 +1,7 @@
 local opt = vim.opt -- raccourci pour un peu plus de concision
 
+vim.g.neovide_scale_factor = 0.85 -- taille de police dans Neovide
+
 opt.title = true -- changer le titre de la fenetre de terminal
 
 -- numéros de ligne
