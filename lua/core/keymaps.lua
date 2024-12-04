@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 -- Raccourci pour la fonction set
 local keymap = vim.keymap.set
 
--- neovide-specific , set copy/paste commands
+-- neovide-specific , set copy/paste commands, as those are commonly done by terminal emulator
 if vim.g.neovide then
 	keymap('n', '<D-s>', ':w<CR>')     -- Save
 	keymap('v', '<D-c>', '"+y')        -- Copy
@@ -13,6 +13,13 @@ if vim.g.neovide then
 	keymap('c', '<D-v>', '<C-R>+')     -- Paste command mode
 	keymap('i', '<D-v>', '<ESC>l"+Pli') -- Paste insert mode
 end
+
+-- ouverture d'un terminal en bas
+keymap("n", "<leader>tt", ":split term://zsh<CR>", { desc = "Ouvrir un terminal en bas" })
+
+-- ouverture de 2 terminaux en bas
+keymap("n", "<leader>tv", ":split term://zsh<CR>:vsplit term://zsh<CR>", { desc = "Ouvrir 2 terminaux en bas" })
+
 
 -- on utilise ;; pour sortir du monde insertion
 keymap("i", ";;", "<ESC>", { desc = "Sortir du mode insertion avec ;;" })
